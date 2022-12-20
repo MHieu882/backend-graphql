@@ -7,6 +7,8 @@ const resolvers = {
     createUser: User.createUser,
     login: User.login,
     createPost: User.createPost,
+    createComment: User.createComment,
+    follow: User.follow,
   },
   Query: {
     Alluser: Find.Alluser,

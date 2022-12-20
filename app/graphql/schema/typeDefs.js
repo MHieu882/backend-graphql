@@ -1,8 +1,7 @@
 const typeDefs = `
   input inputUser{
     email: String
-    password: String  
-    name:String 
+    password: String   
   }
   input login{
     email: String!
@@ -58,7 +57,8 @@ const typeDefs = `
     createUser(input:inputUser!):User!
     login(input:login):User!
     createPost(input : createPost):Post!
-
+    createComment(text:String,postID:String):Comment!
+    follow(userId:String):User!
   }
 `;
 // newPost(title: String!, body: String!, author: String!):Post

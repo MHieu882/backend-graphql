@@ -10,6 +10,7 @@ const UserSchema = new Schema({
   comments: [{ type: mongoose.Types.ObjectId, ref: 'Comment' }],
   isbanned: { type: Boolean, default: false },
   role: { type: String, default: 'user' },
+  top5follower: [{ type: mongoose.Types.ObjectId, ref: 'User', default: [] }],
 });
 
 const User = mongoose.model('User', UserSchema);
