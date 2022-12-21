@@ -25,8 +25,7 @@ const Comment = {
       return logger.error(err);
     }
   },
-  updateCommetnt: async (_, args, { req }) => {
-
+  updateComment: async () => {
   },
 };
 module.exports = Comment;
