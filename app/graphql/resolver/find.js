@@ -18,6 +18,12 @@ const Find = {
       return logger.error(err);
     }
   },
+  following: async () => {
+    try {
+      const user = await models.User.find();
+      return user.following;
+    } catch (err) { return logger.err(err); }
+  },
   User: {
     posts: async ({ email }) => {
       const posts = await models.Post.find({ author: email });
