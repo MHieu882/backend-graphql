@@ -9,6 +9,7 @@ const Post = {
         title: args.input.title,
         body: args.input.body,
         author: req.session.user.email,
+        createAt: Date.now(),
       });
       const user = await models.User.findById(req.session.user._id);
       user.posts.push(newpost._id);
