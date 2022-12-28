@@ -8,10 +8,10 @@ const UserSchema = new Schema({
   email: { type: String, required: true, unique: true },
   username: { type: String, required: true, unique: true },
   role: { type: String, enum: ['User', 'Admin'], default: 'User' },
-
+  password: { type: String, required: true, unique: true },
   photo: { type: String },
   bio: { type: String },
-  status: { type: String, enum: ['Active', 'Deactivated'] },
+  status: { type: String, enum: ['Active', 'Deactivated'], default: 'Active' },
 }, { timestamps: true });
 
 module.exports = mongoose.model('user', UserSchema);

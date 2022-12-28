@@ -1,9 +1,10 @@
 require('./global');
+require('dotenv').config();
 const app = require('./app');
 const config = require('./config');
 
 const server = app.listen(config.port, '0.0.0.0', () => {
-  logger.info(`🚀 Running on port ${config.port}`);
+  logger.info(`🚀 Running on http://localhost:${config.port}`);
 });
 
 process.on('uncaughtException', exception => {
