@@ -7,7 +7,7 @@ async function createContext({ req }) {
   const { query } = req.body;
   const queryAfterParse = gql(query);
   const token = req.headers.authorization;
-  const user = JSON.parse(await redis.clientRedis.scan('0', 'MATCH', `*:${args.id}`, 'COUNT', '100'))););
+  const user = JSON.parse(await redis.clientRedis.get(token));
   if (!user) {
     if (!scope.guestScope.some(operation => operation === queryAfterParse.definitions[0]
       .selectionSet.selections[0].name.value)) {
