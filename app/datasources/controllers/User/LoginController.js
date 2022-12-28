@@ -20,15 +20,14 @@ const login = async (_, args) => {
       return Response.LoginResponse(false, 'Account has been disabled', null, null);
     }
 
-    const token = randomBytes(20).toString('hex');
-    return Promise.all([redis.clientRedis.setex(
+    const randomtoken = randomBytes(20).toString('hex');
+    const token = `${randomtoken}:${user._id}`;
+    Promise.all([redis.clientRedis.setex(
       token,
       config.redisDbs.expiredTime / 1000,
-      JSON.stringify({ email: user.email, role: user.role, id: user._id }),
-    ),
-    redis.clientRedis.lpush(user.email, token),
-    redis.clientRedis.expire(user.email, config.redisDbs.expiredTime / 1000)])
-      .then(() => Response.LoginResponse(true, 'Login succeed', token, user));
+      JSON.stringify({ role: user.role }),
+    )]);
+    return Response.LoginResponse(true, 'Login succeed', token, user);
   } catch (err) {
     return logger.error(err);
   }
