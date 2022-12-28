@@ -11,5 +11,15 @@ const mutationResolver = {
   updatePost: controllers.updatePost,
   deletePost: controllers.deletePost,
   hidePost: controllers.hidePost,
+
+  clapPost: controllers.clapPost,
+  unclapPost: controllers.unclapPost,
+  clapComment: controllers.clapComment,
+  unclapComment: controllers.unclapComment,
+
+  comment: controllers.comment,
+  updateComment: controllers.updateComment,
+  reply: controllers.reply,
+  deleteComment: controllers.deleteComment,
 };
 module.exports = mutationResolver;
