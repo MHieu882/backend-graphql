@@ -1,11 +1,11 @@
-const User = require('./User');
-const Post = require('./Post');
-const Clap = require('./Clap');
-const Comment = require('./Comment');
+const UserController = require('./User');
+const PostController = require('./Post');
+const ClapController = require('./Clap');
+const CommentController = require('./Comment');
 
 module.exports = {
-  ...User,
-  ...Post,
-  ...Clap,
-  ...Comment,
+  UserController,
+  PostController,
+  ClapController,
+  CommentController,
 };

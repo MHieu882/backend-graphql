@@ -1,11 +1,11 @@
-const comment = require('./CommentController');
-const updateComment = require('./updateCommentController');
-const deleteComment = require('./deleteCommentController');
-const reply = require('./replyController');
+const { comment, updateComment, deleteComment, reply } = require('./CommentController');
+const { getreplies } = require('./query');
 
 module.exports = {
   comment,
   updateComment,
   deleteComment,
   reply,
+  // query
+  getreplies,
 };

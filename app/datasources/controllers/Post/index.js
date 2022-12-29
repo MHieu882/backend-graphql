@@ -1,11 +1,12 @@
-const createPost = require('./createPostController');
-const updatePost = require('./updatePostController');
-const deletePost = require('./deletePostController');
-const hidePost = require('./hidePostController');
+const { createPost, deletePost, hidePost, updatePost } = require('./postController');
+const { getPosts, getPost } = require('./query');
 
 module.exports = {
   createPost,
   updatePost,
   deletePost,
   hidePost,
+  // query
+  getPost,
+  getPosts,
 };

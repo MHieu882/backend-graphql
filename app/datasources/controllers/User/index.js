@@ -1,13 +1,19 @@
-const register = require('./RegisterController');
-const login = require('./LoginController');
-const disableUser = require('./DisableUserController');
-const follow = require('./followController');
-const unfollow = require('./unfollowController');
+const { register, login, logout } = require('./AuthController');
+const { disableUser, getuserbyAdmin } = require('./AdminController');
+const { follow, unfollow } = require('./FollowController');
+const { getme, getUsers } = require('./queryUser');
 
 module.exports = {
+  // mutation
   register,
   login,
-  disableUser,
   follow,
   unfollow,
+  logout,
+  // admin
+  getuserbyAdmin,
+  disableUser,
+  // query
+  getme,
+  getUsers,
 };

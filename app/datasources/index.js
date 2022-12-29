@@ -5,7 +5,7 @@ require('./models');
 const controllers = require('./controllers');
 const loaders = require('./loaders');
 const Response = require('./utils/Response');
-// const redistore = require('./utils/redis');
+const { clientRedis } = require('./utils/redis');
 
 if (config.nodeEnv !== 'test') {
   mongoose.set('strictQuery', false);
@@ -18,4 +18,4 @@ if (config.nodeEnv !== 'test') {
   });
 }
 
-module.exports = () => ({ ...controllers, loaders, Response });
+module.exports = () => ({ ...controllers, loaders, Response, clientRedis });

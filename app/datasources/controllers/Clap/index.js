@@ -1,7 +1,4 @@
-const clapPost = require('./clapPostController');
-const unclapPost = require('./unclapPostController');
-const clapComment = require('./clapCommentController');
-const unclapComment = require('./unclapCommentController');
+const { clapPost, unclapPost, clapComment, unclapComment } = require('./ClapController');
 
 module.exports = {
   clapPost,
