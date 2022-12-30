@@ -28,8 +28,16 @@ async function getUsers(parent, args, context, info) {
     return logger.error(`${error.message}\n ${error.stack}`);
   }
 }
-//
+// dataloader
+async function getfollowCounts(parent, args, context, info) {
+  const { _id } = parent;
+  if (!_id) { return null; }
+  const countclap = await context.createLoaders.createUserFollowloader.load(_id.toString());
+  return countclap;
+}
+
 module.exports = {
   getme,
   getUsers,
+  getfollowCounts,
 };

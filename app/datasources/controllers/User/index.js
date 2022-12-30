@@ -1,7 +1,7 @@
 const { register, login, logout } = require('./AuthController');
 const { disableUser, getuserbyAdmin } = require('./AdminController');
 const { follow, unfollow } = require('./FollowController');
-const { getme, getUsers } = require('./queryUser');
+const { getme, getUsers, getfollowCounts } = require('./queryUser');
 
 module.exports = {
   // mutation
@@ -16,4 +16,6 @@ module.exports = {
   // query
   getme,
   getUsers,
+  // dataloader
+  getfollowCounts,
 };

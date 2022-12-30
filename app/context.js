@@ -1,6 +1,6 @@
 const { gql } = require('apollo-server-express');
 const redis = require('./datasources/utils/redis');
-const { scope, throwError } = require('./utils');
+const { scope, throwError, createLoaders } = require('./utils');
 
 async function createContext({ req }) {
   const { query } = req.body;
@@ -25,7 +25,7 @@ async function createContext({ req }) {
       throwError('FORBIDDEN', 'Forbidden', 403);
     }
   }
-  return { user };
+  return { user, createLoaders: createLoaders() };
 }
 
 module.exports = createContext;

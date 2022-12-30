@@ -55,4 +55,5 @@ async function updatePost(parent, args, context, info) {
     return update;
   } catch (err) { return logger.error(err); }
 }
+
 module.exports = { createPost, deletePost, hidePost, updatePost };

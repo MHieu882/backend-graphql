@@ -15,4 +15,15 @@ async function getreplies(parent, args, context, info) {
   }
 }
 // dataloader
-module.exports = { getreplies };
+async function getUserComment(parent, args, context, info) {
+  try {
+    const { ids } = parent;
+  } catch (error) {
+
+  }
+  // call from loader
+}
+async function getPostComment(parent, args, context, info) {
+  // call from loader
+}
+module.exports = { getreplies, getUserComment, getPostComment };
