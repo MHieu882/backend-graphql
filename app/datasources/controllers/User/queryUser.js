@@ -18,7 +18,7 @@ async function getme(parent, args, context, info) {
 async function getUsers(parent, args, context, info) {
   try {
     const { name } = args;
-    const findbyname = await models.User.find({ username: name });
+    const findbyname = await models.User.find({ firstName: name });
     if (!findbyname) {
       throwError('NOT FOUND', 'User not found', 404);
     }

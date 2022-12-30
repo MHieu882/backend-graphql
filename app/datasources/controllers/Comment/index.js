@@ -1,5 +1,5 @@
 const { comment, updateComment, deleteComment, reply } = require('./CommentController');
-const { getreplies, getUserComment, getPostComment } = require('./query');
+const { getreplies, getcomment, getUserComment, getPostComment } = require('./query');
 
 module.exports = {
   comment,
@@ -7,6 +7,7 @@ module.exports = {
   deleteComment,
   reply,
   // query
+  getcomment,
   getreplies,
   getUserComment,
   getPostComment,

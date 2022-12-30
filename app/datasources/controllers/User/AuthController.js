@@ -17,6 +17,8 @@ async function register(parent, args, context, info) {
       username: args.username,
       email: args.email,
       password: hastPassword,
+      status: 'Actie',
+      firstName: 'user',
     });
     return newuser;
   } catch (err) {

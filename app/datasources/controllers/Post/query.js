@@ -29,16 +29,26 @@ async function getPosts(parent, args, context, info) {
 }
 // dataloader
 async function getowner(parent, args, context, info) {
-  const { owner } = parent;
-  if (!owner) { return null; }
-  const findowner = await context.createLoaders.createownerloader.load(owner.toString());
-  return findowner;
+  try {
+    const { owner } = parent;
+    if (!owner) { return null; }
+    const findowner = await context.createLoaders.createownerloader.load(owner.toString());
+    return findowner;
+  } catch (error) {
+    throwError('Internal server error');
+    return logger.error(`${error.message}\n ${error.stack}`);
+  }
 }
 async function getclapCount(parent, args, context, info) {
-  const { _id } = parent;
-  if (!_id) { return null; }
-  const countclap = await context.createLoaders.createclapCountloader.load(_id.toString());
-  return countclap;
+  try {
+    const { _id } = parent;
+    if (!_id) { return null; }
+    const countclap = await context.createLoaders.createclapCountloader.load(_id.toString());
+    return countclap;
+  } catch (error) {
+    throwError('Internal server error');
+    return logger.error(`${error.message}\n ${error.stack}`);
+  }
 }
 module.exports = {
   getPost,

@@ -21,6 +21,9 @@ function getPosts(parent, args, context, info) {
 function getreplies(parent, args, context, info) {
   return context.dataSources.CommentController.getreplies(parent, args, context, info);
 }
+function getcomment(parent, args, context, info) {
+  return context.dataSources.CommentController.getcomment(parent, args, context, info);
+}
 const queryResolver = {
   // admin
   user: getuserbyAdmin,
@@ -32,7 +35,8 @@ const queryResolver = {
   post: getPost,
   posts: getPosts,
 
-  //   // comment
+  // comment
   replies: getreplies,
+  comments: getcomment,
 };
 module.exports = queryResolver;

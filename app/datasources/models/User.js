@@ -11,7 +11,7 @@ const UserSchema = new Schema({
   password: { type: String, required: true, unique: true },
   photo: { type: String },
   bio: { type: String },
-  status: { type: String, enum: ['Active', 'Deactivated'], default: 'Active' },
+  status: { type: String, enum: ['Active', 'Deactivated'] },
 }, { timestamps: true });
 
 module.exports = mongoose.model('user', UserSchema);

@@ -7,4 +7,6 @@ type Query {
   posts(input: PostFilterInput!): [Post]
 
   replies(input: ReplyFilterInput!): [Comment]
+
+  comments:[Comment]
 }
